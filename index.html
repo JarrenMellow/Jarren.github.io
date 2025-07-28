@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarren Toh - Portfolio</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Jarren Toh</h1>
+      <nav>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Hi, I'm Jarren Toh</h2>
+      <p>I'm a passionate automation engineer and driven to create smart scalable solutions.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="project-cards">
+      <div class="project-card project-one">
+        <h3>Medical Train</h3>
+        <p style="color: #fff;">A brief description of Project One.</p>
+        <a href="#" style="color: white;">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p style="color: #fff;">A brief description of Project Two.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>A brief description of Project Three.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Project One -->
+  <div id="projectOneModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeProjectOne">&times;</span>
+      <h2>Medical Train</h2>
+      <div style="max-height:300px; overflow-y:auto;">
+        <p>
+          Detailed information about Project One goes here. You can add images, text, or anything you want. This area is scrollable if the content is long.
+        </p>
+        <!-- Add more content as needed -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievements Section (now horizontal scrollable cards) -->
+  <section id="achievements" class="achievements">
+    <div class="container">
+      <h2 style="text-align: center;">Achievements</h2>
+      <div class="achievement-cards">
+        <div class="achievement-card">
+          <h3>Awarded Best Automation Project 2024</h3>
+        </div>
+        <div class="achievement-card">
+          <h3>Certified Robotics Engineer</h3>
+        </div>
+        <div class="achievement-card">
+          <h3>Speaker at Tech Innovators Conference 2023</h3>
+        </div>
+        <!-- Add more achievement cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Modal (hidden by default) -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeContactModal">&times;</span>
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+
+<script>
+document.querySelector('.project-one a').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('projectOneModal').style.display = 'block';
+});
+document.getElementById('closeProjectOne').onclick = function() {
+  document.getElementById('projectOneModal').style.display = 'none';
+};
+
+// Contact Modal logic
+document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('contactModal').style.display = 'block';
+});
+document.getElementById('closeContactModal').onclick = function() {
+  document.getElementById('contactModal').style.display = 'none';
+};
+window.onclick = function(event) {
+  var projectModal = document.getElementById('projectOneModal');
+  var contactModal = document.getElementById('contactModal');
+  if (event.target == projectModal) {
+    projectModal.style.display = 'none';
+  }
+  if (event.target == contactModal) {
+    contactModal.style.display = 'none';
+  }
+};
+</script>
+</body>
+</html>
