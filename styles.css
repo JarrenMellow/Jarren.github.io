@@ -215,6 +215,31 @@ footer p {
   z-index: 1;
 }
 
+.project-card.project-two {
+  background-image: url('images/image4.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card.project-two h3,
+.project-card.project-two p,
+.project-card.project-two a {
+  position: relative;
+  z-index: 2;
+}
+
+.project-card.project-two::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  /* dark overlay for readability */
+  z-index: 1;
+}
+
 .project-desc-white {
   color: #fff;
 }

@@ -35,19 +35,20 @@
     <div class="project-cards">
       <div class="project-card project-one">
         <h3>Medical Train</h3>
-        <p style="color: #fff;">A brief description of Project One.</p>
+        <p style="color: #fff;">Medical Train to aid elderly and mobility issues patients</p>
         <a href="#" style="color: white;">View Project</a>
       </div>
+     <div class="project-card project-two">
+  <h3>Food Ordering Website</h3>
+  <p style="color: #fff;">Website to allow business easy integration of ordering and backend</p>
+  <a href="#" style="color: white;">View Project</a>
+</div>
       <div class="project-card">
-        <h3>Project Two</h3>
-        <p style="color: #fff;">A brief description of Project Two.</p>
+        <h3>Smart Fire Alarm System</h3>
+        <p>Automated Fire Alarm System with website and telegram integration</p>
         <a href="#">View Project</a>
       </div>
-      <div class="project-card">
-        <h3>Project Three</h3>
-        <p>A brief description of Project Three.</p>
-        <a href="#">View Project</a>
-      </div>
+      
     </div>
   </section>
 
@@ -55,12 +56,46 @@
   <div id="projectOneModal" class="modal">
     <div class="modal-content">
       <span class="close" id="closeProjectOne">&times;</span>
-      <h2>Medical Train</h2>
+      <h2 style="text-align: c;">Medical Train</h2>
       <div style="max-height:300px; overflow-y:auto;">
-        <p>
-          Detailed information about Project One goes here. You can add images, text, or anything you want. This area is scrollable if the content is long.
+          <p style="margin-bottom: 1.2rem; margin-left: 1.2rem; margin-top: 1.2rem;">
+         Designed and built a medical train for hospitalization for automated medication delivery using various sensors to alleviate the burden on nurses
+         Designed and built a medical train for hospitalization for automated medication delivery using various sensors to alleviate the burden on nurses
+         Skills: C++ · 3D Printing · C (Programming Language)
         </p>
+         <img src="images/image3.jpg" alt="Medical Train Project"  style="width:80%; display:block; margin:0 auto 1rem auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+      
         <!-- Add more content as needed -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Project Two -->
+  <div id="projectTwoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Food Ordering Website</h2>
+      <div style="max-height:300px; overflow-y:auto;">
+        <p style="margin-bottom: 1.2rem;">
+         Website for n<br><br>
+          <strong>Skills:</strong> (Add relevant skills here)
+        </p>
+        <!-- Optionally add an image here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Project Three -->
+  <div id="projectThreeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Project Three</h2>
+      <div style="max-height:300px; overflow-y:auto;">
+        <p style="margin-bottom: 1.2rem;">
+          A brief description of Project Three.<br><br>
+          <strong>Skills:</strong> (Add relevant skills here)
+        </p>
+        <!-- Optionally add an image here -->
       </div>
     </div>
   </div>
@@ -71,15 +106,19 @@
       <h2 style="text-align: center;">Achievements</h2>
       <div class="achievement-cards">
         <div class="achievement-card">
-          <h3>Awarded Best Automation Project 2024</h3>
+          <h3>Awarded 3rd place for ICDL Digital Challenge for SolidEdge Modelling</h3>
         </div>
         <div class="achievement-card">
-          <h3>Certified Robotics Engineer</h3>
+          <h3>Certificate of Participation in WorldSkills Singapore for Mobile App Development</h3>
         </div>
         <div class="achievement-card">
-          <h3>Speaker at Tech Innovators Conference 2023</h3>
+          <h3>Certified Docker and Kubernetes by Dell</h3>
         </div>
-        <!-- Add more achievement cards as needed -->
+          <div class="achievement-card">
+          <h3>Learning Express (LeX) Certificate by NYC</h3>
+        </div>
+      
+        
       </div>
     </div>
   </section>
@@ -100,13 +139,35 @@
 
 
 <script>
-document.querySelector('.project-one a').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.getElementById('projectOneModal').style.display = 'block';
+const projectModals = [
+  {
+    selector: '.project-one a',
+    modalId: 'projectOneModal'
+  },
+  {
+    selector: '.project-cards > .project-card:nth-child(2) a',
+    modalId: 'projectTwoModal'
+  },
+  {
+    selector: '.project-cards > .project-card:nth-child(3) a',
+    modalId: 'projectThreeModal'
+  }
+];
+
+// Attach event listeners for all project "View Project" buttons
+projectModals.forEach(({selector, modalId}) => {
+  const btn = document.querySelector(selector);
+  const modal = document.getElementById(modalId);
+  if (btn && modal) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
+    modal.querySelector('.close').onclick = function() {
+      modal.style.display = 'none';
+    };
+  }
 });
-document.getElementById('closeProjectOne').onclick = function() {
-  document.getElementById('projectOneModal').style.display = 'none';
-};
 
 // Contact Modal logic
 document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
@@ -117,11 +178,13 @@ document.getElementById('closeContactModal').onclick = function() {
   document.getElementById('contactModal').style.display = 'none';
 };
 window.onclick = function(event) {
-  var projectModal = document.getElementById('projectOneModal');
+  projectModals.forEach(({modalId}) => {
+    var modal = document.getElementById(modalId);
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  });
   var contactModal = document.getElementById('contactModal');
-  if (event.target == projectModal) {
-    projectModal.style.display = 'none';
-  }
   if (event.target == contactModal) {
     contactModal.style.display = 'none';
   }
