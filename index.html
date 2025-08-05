@@ -21,12 +21,12 @@
       </nav>
     </div>
   </header>
-
+  
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <h2>Hi, I'm Jarren Toh</h2>
-      <p>I'm a passionate automation engineer and driven to create smart scalable solutions.</p>
+      <p>I'm an automation engineer with a deep passion for creating innovative, scalable solutions that make a real-world impact. Whether it’s automating mundane tasks or designing complex systems, I thrive on solving problems that improve efficiency and enhance lives. I believe technology should always work for people, and that’s what drives me to build smarter, more intuitive solutions.</p>
     </div>
   </section>
 
@@ -43,12 +43,21 @@
   <p style="color: #fff;">Website to allow business easy integration of ordering and backend</p>
   <a href="#" style="color: white;">View Project</a>
 </div>
-      <div class="project-card">
+      <div class="project-card project-three">
         <h3>Smart Fire Alarm System</h3>
-        <p>Automated Fire Alarm System with website and telegram integration</p>
-        <a href="#">View Project</a>
+        <p style="color: white;">Automated Fire Alarm System with website and telegram integration</p>
+        <a href="#" style="color: #fff;">View Project</a>
       </div>
-      
+      <div class="project-card project-four">
+        <h3>Smart Autonomous Robot</h3>
+        <p style="color: white;">Smart Autonomous Robot for medical use</p>
+        <a href="#" style="color: #fff;">View Project</a>
+      </div>
+      <div class="project-card project-five">
+  <h3>MEDIQ Mobile App</h3>
+  <p style="color: #fff;">Mobile Application that allows users to easily place Queue numbers and do medical related affairs.</p>
+  <a href="#" style="color: white;">View Project</a>
+</div>
     </div>
   </section>
 
@@ -77,8 +86,8 @@
       <h2>Food Ordering Website</h2>
       <div style="max-height:300px; overflow-y:auto;">
         <p style="margin-bottom: 1.2rem;">
-         Website for n<br><br>
-          <strong>Skills:</strong> (Add relevant skills here)
+        Together with my team, we created a fullstack website using JavaScript, PHP, HTML connected to a Firebase server that allows users to order and pay for food using this website, as well as let restaurants easily customize menus and seasonal promotions<br><br>
+          <strong>Skills: PHP, JavaScript, HTML, CSS, Firebase, fullstack development</strong> 
         </p>
         <!-- Optionally add an image here -->
       </div>
@@ -89,35 +98,67 @@
   <div id="projectThreeModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Project Three</h2>
+      <h2>Smart Fire Alarm System</h2>
       <div style="max-height:300px; overflow-y:auto;">
         <p style="margin-bottom: 1.2rem;">
-          A brief description of Project Three.<br><br>
-          <strong>Skills:</strong> (Add relevant skills here)
+        Design a prototype smart fire alarm with features like telegram bot, website, picam and various sensors and I/O that allows users to monitor their house remotely as well as notify them of a potential fire. Coupled with kubernetes and Docker, my team and I created a persistent and light weight solution<br><br>
+          <strong>Skills: Github, HTML, CSS, Kubernetes, Python</strong>
         </p>
         <!-- Optionally add an image here -->
       </div>
     </div>
   </div>
 
+  <!-- Modal for Project Four -->
+  <div id="projectFourModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Smart Autonomous Robot</h2>
+    <div style="max-height:300px; overflow-y:auto;">
+      <p style="margin-bottom: 1.2rem;">
+       Design a robot that has capabilities to line trace to move around as well as a medicine dispenser and games for dementia patients. Paired with a remote controlled app and various sensors and actuators, this allows dynamic use as well as have a large impact on healthcare as a whole.<br><br>
+        <strong>Skills: C++, 3D Printing, C, 3D Modelling</strong>
+      </p>
+      <!-- Optionally add an image here -->
+    </div>
+  </div>
+</div>
+
+  <!-- Modal for Project Five -->
+  <div id="projectFiveModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>MEDIQ Mobile App</h2>
+    <div style="max-height:300px; overflow-y:auto;">
+      <p style="margin-bottom: 1.2rem;">
+       designed a medical app for doctors and patients that allows for tele-consultation. Easy map guidance as well as booking appointments<br><br>
+        <strong>Skills: Kotlin, Figma Design, Firebase, API </strong> 
+      </p>
+      <!-- Optionally add an image here -->
+    </div>
+  </div>
+</div>
+
   <!-- Achievements Section (now horizontal scrollable cards) -->
   <section id="achievements" class="achievements">
     <div class="container">
-      <h2 style="text-align: center;">Achievements</h2>
+      <h2 style="text-align: center; ">Achievements</h2>
       <div class="achievement-cards">
-        <div class="achievement-card">
+        <div class="achievement-card" data-image="images/cer1.jpg">
           <h3>Awarded 3rd place for ICDL Digital Challenge for SolidEdge Modelling</h3>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card" data-image="images/cer4.jpg">
           <h3>Certificate of Participation in WorldSkills Singapore for Mobile App Development</h3>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card" data-image="images/cer3.jpg">
           <h3>Certified Docker and Kubernetes by Dell</h3>
         </div>
-          <div class="achievement-card">
+        <div class="achievement-card" data-image="images/cer2.jpg">
           <h3>Learning Express (LeX) Certificate by NYC</h3>
         </div>
-      
+        <div class="achievement-card" data-image="images/achievement5.jpg">
+          <h3>SP SPOT (Singapore Polytechnic Outstanding Talent) member</h3>
+        </div>
         
       </div>
     </div>
@@ -137,6 +178,14 @@
     </div>
   </div>
 
+  <!-- Achievement Image Modal -->
+<div id="achievementModal" class="modal">
+  <div class="modal-content" style="max-width: 500px; padding: 0;">
+    <span class="close" id="closeAchievementModal" style="position:absolute;top:10px;right:20px;font-size:28px;cursor:pointer;">&times;</span>
+    <img id="achievementModalImg" src="" alt="Achievement" style="width:100%;display:block;border-radius:8px;">
+  </div>
+</div>
+
 
 <script>
 const projectModals = [
@@ -151,6 +200,14 @@ const projectModals = [
   {
     selector: '.project-cards > .project-card:nth-child(3) a',
     modalId: 'projectThreeModal'
+  },
+  {
+    selector: '.project-cards > .project-card:nth-child(4) a',
+    modalId: 'projectFourModal'
+  },
+  {
+    selector: '.project-cards > .project-card:nth-child(5) a',
+    modalId: 'projectFiveModal'
   }
 ];
 
@@ -177,7 +234,23 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
 document.getElementById('closeContactModal').onclick = function() {
   document.getElementById('contactModal').style.display = 'none';
 };
+
+// Achievement card click logic
+document.querySelectorAll('.achievement-card').forEach(card => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function() {
+    const imgSrc = card.getAttribute('data-image');
+    if (imgSrc) {
+      document.getElementById('achievementModalImg').src = imgSrc;
+      document.getElementById('achievementModal').style.display = 'block';
+    }
+  });
+});
+document.getElementById('closeAchievementModal').onclick = function() {
+  document.getElementById('achievementModal').style.display = 'none';
+};
 window.onclick = function(event) {
+  // Existing modal close logic...
   projectModals.forEach(({modalId}) => {
     var modal = document.getElementById(modalId);
     if (event.target == modal) {
@@ -187,6 +260,10 @@ window.onclick = function(event) {
   var contactModal = document.getElementById('contactModal');
   if (event.target == contactModal) {
     contactModal.style.display = 'none';
+  }
+  var achievementModal = document.getElementById('achievementModal');
+  if (event.target == achievementModal) {
+    achievementModal.style.display = 'none';
   }
 };
 </script>

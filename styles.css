@@ -240,6 +240,77 @@ footer p {
   z-index: 1;
 }
 
+.project-card.project-three {
+  background-image: url('images/image2.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card.project-three h3,
+.project-card.project-three p,
+.project-card.project-three a {
+  position: relative;
+  z-index: 2;
+}
+
+.project-card.project-three::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  /* dark overlay for readability */
+  z-index: 1;
+}
+
+.project-card.project-four {
+  background-image: url('images/image5.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.project-card.project-four h3,
+.project-card.project-four p,
+.project-card.project-four a {
+  position: relative;
+  z-index: 2;
+}
+.project-card.project-four::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  /* dark overlay for readability */
+  z-index: 1;
+}
+.project-card.project-five {
+  background-image: url('images/image6.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.project-card.project-five h3,
+.project-card.project-five p,
+.project-card.project-five a {
+  position: relative;
+  z-index: 2;
+}
+.project-card.project-five::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* dark overlay for readability */
+  z-index: 1;
+}
+
+
+
 .project-desc-white {
   color: #fff;
 }
@@ -284,9 +355,11 @@ footer p {
 
 .achievement-cards {
   display: flex;
+  flex-direction: row;
   overflow-x: auto;
   gap: 2rem;
-  padding: 1.5rem 0 1.5rem 0.5rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
 }
 
 .achievement-card {
