@@ -308,6 +308,28 @@ footer p {
   background: rgba(0,0,0,0.45); /* dark overlay for readability */
   z-index: 1;
 }
+.project-card.project-six {
+  background-image: url('images/image3.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.project-card.project-six h3,
+.project-card.project-six p,
+.project-card.project-six a {
+  position: relative;
+  z-index: 2;
+}
+.project-card.project-six::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* dark overlay for readability */
+  z-index: 1;
+}
+
 
 
 

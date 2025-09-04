@@ -30,6 +30,8 @@
     </div>
   </section>
 
+  <h2 style="text-align: center;">Projects</h2>
+
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="project-cards">
@@ -58,6 +60,13 @@
   <p style="color: #fff;">Mobile Application that allows users to easily place Queue numbers and do medical related affairs.</p>
   <a href="#" style="color: white;">View Project</a>
 </div>
+  <div class="project-card project-six">
+  <h3>Double Door Entry System</h3>
+  <p style="color: #fff;">A Double Door with biometerics and mobile application verification for restricted access places</p>
+  <a href="#" style="color: white;">View Project</a>
+
+
+
     </div>
   </section>
 
@@ -139,6 +148,25 @@
   </div>
 </div>
 
+  <!-- Modal for Project Six -->
+  <div id="projectSixModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Double Door Security System</h2>
+    <div style="max-height:300px; overflow-y:auto;">
+      <p style="margin-bottom: 1.2rem;">
+      Designed a double door system where user needs to login into mobile application using registered email address and key in code located at the first door to enter. The second door will have biometrics recognition with fingerprint and face ID<br><br>
+        <strong>Skills: Firebase, C++, 3D printing and design </strong> 
+        <br>
+        <a href="https://ryanteowenhao.github.io/DoubleDoorSystem/website-main/html/index.html" target="_blank" style="color:#3b82f6; text-decoration:underline;">View Website</a>
+      </p>
+      <!-- Optionally add an image here -->
+    </div>
+  </div>
+</div>
+
+
+
   <!-- Achievements Section (now horizontal scrollable cards) -->
   <section id="achievements" class="achievements">
     <div class="container">
@@ -208,6 +236,10 @@ const projectModals = [
   {
     selector: '.project-cards > .project-card:nth-child(5) a',
     modalId: 'projectFiveModal'
+  },
+  {
+    selector: '.project-cards > .project-card:nth-child(6) a',
+    modalId: 'projectSixModal'
   }
 ];
 
