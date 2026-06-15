@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jarren Toh - Portfolio</title>
   <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -67,6 +68,24 @@
 
 
 
+    </div>
+  </section>
+
+  <h2 style="text-align: center;">Personal Projects</h2>
+
+  <!-- Personal Projects Section -->
+  <section id="personal-projects" class="projects">
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Personal Project 1</h3>
+        <p style="color: #000000;">Add your personal project description here.</p>
+        <a href="#" style="color: rgb(0, 0, 0);">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Personal Project 2</h3>
+        <p style="color: #000000;">Add your personal project description here.</p>
+        <a href="#" style="color: rgb(0, 0, 0);">View Project</a>
+      </div>
     </div>
   </section>
 
@@ -165,33 +184,6 @@
   </div>
 </div>
 
-
-
-  <!-- Achievements Section (now horizontal scrollable cards) -->
-  <section id="achievements" class="achievements">
-    <div class="container">
-      <h2 style="text-align: center; ">Achievements</h2>
-      <div class="achievement-cards">
-        <div class="achievement-card" data-image="images/cer1.jpg">
-          <h3>Awarded 3rd place for ICDL Digital Challenge for SolidEdge Modelling</h3>
-        </div>
-        <div class="achievement-card" data-image="images/cer4.jpg">
-          <h3>Certificate of Participation in WorldSkills Singapore for Mobile App Development</h3>
-        </div>
-        <div class="achievement-card" data-image="images/cer3.jpg">
-          <h3>Certified Docker and Kubernetes by Dell</h3>
-        </div>
-        <div class="achievement-card" data-image="images/cer2.jpg">
-          <h3>Learning Express (LeX) Certificate by NYC</h3>
-        </div>
-        <div class="achievement-card" data-image="images/achievement5.jpg">
-          <h3>SP SPOT (Singapore Polytechnic Outstanding Talent) member</h3>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
   <!-- Contact Modal (hidden by default) -->
   <div id="contactModal" class="modal">
     <div class="modal-content">
@@ -203,6 +195,22 @@
         <textarea placeholder="Your Message" rows="4" required></textarea>
         <button type="submit">Send Message</button>
       </form>
+    </div>
+  </div>
+
+  <!-- About Modal (hidden by default) -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeAboutModal">&times;</span>
+      <h2>About Me</h2>
+      <div style="text-align: center; padding: 1.5rem 0;">
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">Connect with me on social media:</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <a href="https://www.linkedin.com/in/jarrentoh/" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #3b82f6; text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 0.75rem 1.5rem; border: 2px solid #3b82f6; border-radius: 6px; transition: all 0.3s;"><i class="fab fa-linkedin"></i>LinkedIn</a>
+          <a href="https://github.com/JarrenMellow" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #3b82f6; text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 0.75rem 1.5rem; border: 2px solid #3b82f6; border-radius: 6px; transition: all 0.3s;"><i class="fab fa-github"></i>GitHub</a>
+          <a href="https://www.youtube.com/@hehepoopxd3033" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #3b82f6; text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 0.75rem 1.5rem; border: 2px solid #3b82f6; border-radius: 6px; transition: all 0.3s;"><i class="fab fa-youtube"></i>YouTube</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -267,6 +275,15 @@ document.getElementById('closeContactModal').onclick = function() {
   document.getElementById('contactModal').style.display = 'none';
 };
 
+// About Modal logic
+document.querySelector('a[href="#about"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('aboutModal').style.display = 'block';
+});
+document.getElementById('closeAboutModal').onclick = function() {
+  document.getElementById('aboutModal').style.display = 'none';
+};
+
 // Achievement card click logic
 document.querySelectorAll('.achievement-card').forEach(card => {
   card.style.cursor = 'pointer';
@@ -293,11 +310,88 @@ window.onclick = function(event) {
   if (event.target == contactModal) {
     contactModal.style.display = 'none';
   }
+  var aboutModal = document.getElementById('aboutModal');
+  if (event.target == aboutModal) {
+    aboutModal.style.display = 'none';
+  }
   var achievementModal = document.getElementById('achievementModal');
   if (event.target == achievementModal) {
     achievementModal.style.display = 'none';
   }
 };
 </script>
+
+<section id="ongoing-projects" class="ongoing-projects">
+  <div class="container">
+    <h2>Ongoing Projects</h2>
+    <div class="ongoing-cards">
+      <div class="ongoing-card">
+        <span class="card-badge">In progress</span>
+        <h3>Portfolio Refresh</h3>
+        <p>Refining the layout, spacing, and section hierarchy so the portfolio reads more clearly on desktop and mobile.</p>
+      </div>
+      <div class="ongoing-card">
+        <span class="card-badge">In progress</span>
+        <h3>Automation Prototypes</h3>
+        <p>Exploring new embedded and software ideas that combine sensors, interfaces, and practical workflows.</p>
+      </div>
+      <div class="ongoing-card">
+        <span class="card-badge">In progress</span>
+        <h3>Project Documentation</h3>
+        <p>Cleaning up descriptions, skills, and visuals so each project is easier to scan at a glance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Section (now horizontal scrollable cards) -->
+<section id="achievements" class="achievements">
+  <div class="container">
+    <h2 style="text-align: center; ">Achievements</h2>
+    <div class="achievement-cards">
+      <div class="achievement-card" data-image="images/cer1.jpg">
+        <h3>Awarded 3rd place for ICDL Digital Challenge for SolidEdge Modelling</h3>
+      </div>
+      <div class="achievement-card" data-image="images/cer4.jpg">
+        <h3>Certificate of Participation in WorldSkills Singapore for Mobile App Development</h3>
+      </div>
+      <div class="achievement-card" data-image="images/cer3.jpg">
+        <h3>Certified Docker and Kubernetes by Dell</h3>
+      </div>
+      <div class="achievement-card" data-image="images/cer2.jpg">
+        <h3>Learning Express (LeX) Certificate by NYC</h3>
+      </div>
+      <div class="achievement-card" data-image="images/achievement5.jpg">
+        <h3>SP SPOT (Singapore Polytechnic Outstanding Talent) member</h3>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="interests" class="interests">
+  <div class="container">
+    <h2>Interests</h2>
+    <div class="interest-cards">
+      <div class="interest-card">
+        <span class="card-badge">Interest</span>
+        <h3>3D Printing</h3>
+        <p>Turning ideas into physical models and iterating quickly through hands-on prototyping.</p>
+      </div>
+      <div class="interest-card">
+        <span class="card-badge">Interest</span>
+        <h3>Tinkering</h3>
+        <p>Exploring hardware, sensors, and small builds that turn technical curiosity into something useful.</p>
+      </div>
+      <div class="interest-card">
+        <span class="card-badge">Interest</span>
+        <h3>Automation</h3>
+        <p>Building systems that reduce repetitive work and make processes more reliable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 </body>
 </html>

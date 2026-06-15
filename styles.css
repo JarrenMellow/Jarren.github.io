@@ -407,4 +407,73 @@ footer p {
   transform: translateY(-8px) scale(1.03);
 }
 
+.ongoing-projects,
+.interests {
+  padding: 60px 0;
+}
+
+.ongoing-projects h2,
+.interests h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.ongoing-cards,
+.interest-cards {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.ongoing-card,
+.interest-card {
+  min-width: 320px;
+  max-width: 340px;
+  background: #23272f;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  margin-bottom: 1rem;
+}
+
+.ongoing-card:hover,
+.interest-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-8px) scale(1.03);
+}
+
+.ongoing-card h3,
+.interest-card h3 {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.ongoing-card p,
+.interest-card p {
+  color: #d1d5db;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 
